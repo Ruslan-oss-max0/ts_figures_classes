@@ -14,11 +14,13 @@ export class Triangle implements Figure {
     public c: number,
   ) {
     if (a <= 0 || b <= 0 || c <= 0) {
-      throw new Error('Error');
+      throw new Error('Triangle side lengths must be greater than 0');
     }
 
     if (Math.max(a, b, c) >= a + b + c - Math.max(a, b, c)) {
-      throw new Error('Error');
+      throw new Error(
+        'Triangle inequality violated: provided sides cannot form a triangle',
+      );
     }
   }
 
@@ -39,7 +41,7 @@ export class Circle implements Figure {
     public radius: number,
   ) {
     if (radius <= 0) {
-      throw new Error('Error');
+      throw new Error('Width and height must be greater than 0');
     }
   }
 
@@ -59,7 +61,7 @@ export class Rectangle implements Figure {
     public height: number,
   ) {
     if (width <= 0 || height <= 0) {
-      throw new Error('Error');
+      throw new Error('Width and height must be greater than 0');
     }
   }
 
