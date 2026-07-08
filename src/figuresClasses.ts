@@ -41,7 +41,7 @@ export class Circle implements Figure {
     public radius: number,
   ) {
     if (radius <= 0) {
-      throw new Error('Width and height must be greater than 0');
+      throw new Error('Radius must be greater than 0');
     }
   }
 
